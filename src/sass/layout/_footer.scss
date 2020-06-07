@@ -1,0 +1,36 @@
+.footer {
+    display: flex;
+    background-color: $primary;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+
+    &--contact {
+        padding: 32px 0 ;
+        color: $white;
+        font-size: 28px;
+        font-family: 'Roboto Condensed', sans-serif;
+        text-transform: uppercase;
+
+        a {
+            color: $white;
+            font-weight: 700;
+            text-decoration: none;
+            
+            &:hover {
+                color: $tertiary;
+            }
+        }
+    }
+    &--copyright {
+        color: $white;
+        font-family: 'Roboto Condensed', sans-serif;
+        background-color: $primary;
+
+    
+        a {
+            color: $white;
+        } 
+    }
+}

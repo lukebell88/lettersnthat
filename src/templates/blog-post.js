@@ -5,26 +5,31 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
-import heroStyles from '../components/hero.module.css'
+import styles from '../templates/blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const detailed = post.detailedImages
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div className={styles.container}>
           <Helmet title={`${post.title} | ${siteTitle}`} />
-          <div className={heroStyles.hero}>
-            <Img
-              className={heroStyles.heroImage}
-              alt={post.title}
-              fluid={post.heroImage.fluid}
-            />
+
+          <div className={styles.heroContainer}>
+            <div className={styles.hero}>
+              <Img
+                className={styles.heroImage}
+                alt={post.title}
+                fluid={post.heroImage.fluid}
+              />
+            </div>
           </div>
-          <div className="wrapper">
-            <h1 className="section-headline">{post.title}</h1>
+
+          <div className={styles.detailsContainer}>
+            <h1 className={styles.title}>{post.title}</h1>
             <p
               style={{
                 display: 'block',
@@ -37,6 +42,16 @@ class BlogPostTemplate extends React.Component {
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
+
+          <div className={styles.detailedImages}>
+            {detailed.map((image, index) => (
+              <Img
+                fluid={image.fluid}
+                key={index}
+                className={styles.detailedImg}
+              />
+            ))}
+          </div>
           </div>
         </div>
       </Layout>
@@ -57,6 +72,11 @@ export const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
+        fluid(maxWidth: 1180, background: "rgb:000000") {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
+      }
+      detailedImages {
         fluid(maxWidth: 1180, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
         }

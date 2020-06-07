@@ -25,13 +25,20 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Letters N That',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+    },
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-contentful',

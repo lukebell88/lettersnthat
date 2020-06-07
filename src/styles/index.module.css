@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+}
+.articleList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+.articleItem {
+    width: calc(25% - 2px);
+    list-style: none;
+    margin-bottom: 0;
+    border: 0.25px solid #f7f7f7;
+}
+
+@media (max-width: 1280px) {
+    .articleItem {
+        width: calc(33.33% - 2px);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .articleItem {
+        width: calc(33.33% - 2px);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .articleItem {
+        width: calc(50% - 2px);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .articleItem {
+        width: calc(100%);
+        border: none;
+        border-bottom: 0.5px solid #f7f7f7;
+    }
+}

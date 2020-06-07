@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  height: 100vh;
+  background-color: $white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  img.--logo {
+    width: 140px;
+    height: intrinsic;
+    margin: 0;
+  }
+  &--logo__link {
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+  &--text__link {
+    display: block;
+    color: $primary;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 12px;
+    letter-spacing: -0.5px;
+
+    &:hover {
+        color: $secondary;
+    }
+  }
+  &--navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    
+      &__spacer {
+        height: 6px;
+        width: 44px;
+        background-color: #fab7b7;
+        margin-top: 16px;
+        margin-bottom: 16px; 
+      }
+  }
+}
+ul.social--container {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+li.social--icon {
+  list-style-type: none;
+  width: 24px;
+  margin-right: 16px;
+  margin-bottom: 0;
+}
+.social--icon__link {
+    fill: $primary;
+    &:hover {
+        fill: $secondary;
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .header {
+    justify-content: center;
+    padding: 16px 32px;
+    height: auto;
+
+    img.--logo {
+      max-width: 140px;
+      height: intrinsic;
+    }
+    &--text__link {
+      display: inline-block;
+      margin-right: 24px;
+      margin-top: 0;
+  
+      &:hover {
+          color: $secondary;
+      }
+    }
+    &--navigation {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: auto;
+      
+        &__spacer {
+          display: none;
+        }
+        &__links {
+          display: flex;
+          align-items: center;
+        }
+    }
+  }
+  li.social--icon {
+    list-style-type: none;
+    width: 24px;
+    margin-left: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .header {
+    justify-content: center;
+    padding: 16px 16px;
+    height: auto;
+
+    img.--logo {
+      max-width: 120px;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header {
+    justify-content: center;
+    padding: 16px 16px;
+    height: auto;
+
+    img.--logo {
+      max-width: 110px;
+    }
+  }
+}
