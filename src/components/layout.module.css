@@ -4,3 +4,9 @@
     flex-direction: row;
     position: relative;
 }
+
+@media (max-width: 991.98px) {
+    .container {
+      flex-direction: column;
+    }
+}

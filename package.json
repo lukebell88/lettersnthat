@@ -7,14 +7,18 @@
     "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
   },
   "dependencies": {
+    "gatsby-cli": "^2.12.44",
     "gatsby-image": "^2.3.4",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sharp": "^2.5.6",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-contentful": "^2.2.9",
     "gatsby-transformer-remark": "^2.7.3",
     "gatsby-transformer-sharp": "^2.4.6",
     "lodash": "^4.17.15",
     "react": "^16.13.1",
+    "react-burger-menu": "^2.6.15",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "sharp": "^0.25.2"

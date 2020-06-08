@@ -2,9 +2,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styles from './navigation.module.css'
 import Logo from '../images/letters-n-that-logo.png'
+import Burgermenu from './bugermenu'
 
 export default () => (
   <nav role="navigation" className={styles.header}>
+    <div className={styles.burger}>
+    <Burgermenu />
+    </div>
     <div className={styles.headerItem}>
       <Link to="/" className={styles.logo}>
         <img
@@ -14,6 +18,7 @@ export default () => (
           title="Letters N That"
         />
       </Link>
+      <div className={styles.spacer}/>
 
 
     <ul className={styles.navigation}>

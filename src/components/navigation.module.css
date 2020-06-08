@@ -7,9 +7,13 @@
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 .headerItem {
   padding: 32px;
+}
+.burger {
+  display: none;
 }
 .logo {
   display: flex;
@@ -21,6 +25,13 @@
   height: intrinsic;
   margin: 0;
 }
+.spacer {
+  background-color:  #F8BCB4;
+  display: block;
+  width: 44px;
+  height: 6px;
+  margin-top: 16px;
+}
 .navigation {
   display: flex;
   flex-direction: column;
@@ -31,18 +42,21 @@
 }
 .navigationItem a {
   color: #010777;
-  font-size: 21px;
+  font-size: 22px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 400;
+
   text-decoration: none;
   margin-top: 12px;
   letter-spacing: -0.5px;
 }
+.navigationItem a:hover { 
+  color: #3A9886;
+}
 .social {
   display: flex;
   flex-direction: row;
-  margin: 0 0 16px 0;
+  margin: 16px 0 16px 0;
 }
 .socialItem {
   width: 24px;
@@ -50,4 +64,35 @@
   margin-bottom: 0px;
   list-style-type: none;
   fill: #010777;
+}
+.socialItem:hover {
+  fill: #3A9886;
+}
+
+
+@media (max-width: 991.98px) {
+  .header {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+  .headerItem { 
+    padding: 16px;
+  }
+  .burger {
+    display: block;
+  }
+  .spacer {
+    display: none;
+  }
+  .navigation {
+    display: none;
+  }
+  .logoItem {
+    width: 116px;
+  }
+  .social {
+    display: none;
+  }
+
 }
