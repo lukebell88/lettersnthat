@@ -68,7 +68,9 @@
 .socialItem:hover {
   fill: #3A9886;
 }
-
+.mobileSpacer {
+  display: none;
+}
 
 @media (max-width: 991.98px) {
   .header {
@@ -93,6 +95,9 @@
   }
   .social {
     display: none;
+  }
+  .mobileSpacer {
+    display: block;
   }
 
 }

@@ -2,12 +2,33 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styles from './navigation.module.css'
 import Logo from '../images/letters-n-that-logo.png'
-import Burgermenu from './bugermenu'
+import Menu from './menu'
+import Popup from "reactjs-popup"
+import BurgerIcon from './bugerIcon'
+import '../sass/main.scss'
+
+const contentStyle = {
+  background: "rgba(255,255,255,0)",
+  width: "80%",
+  border: "none"
+};
+
+const fontStyle = {
+  fontFamily: "Roboto Condensed, sans-serif"
+};
 
 export default () => (
   <nav role="navigation" className={styles.header}>
-    <div className={styles.burger}>
-    <Burgermenu />
+    <div className={styles.burger} style={fontStyle}>
+        <Popup
+          modal
+          overlayStyle={{ background: "rgba(255,255,255,0.98" }}
+          contentStyle={contentStyle}
+          closeOnDocumentClick={false}
+          trigger={open => <BurgerIcon open={open} />}
+        >
+          {close => <Menu close={close} />}
+        </Popup>
     </div>
     <div className={styles.headerItem}>
       <Link to="/" className={styles.logo}>

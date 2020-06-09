@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import styles from '../styles/index.module.css'
+import '../sass/main.scss'
 
 class RootIndex extends React.Component {
   render() {
