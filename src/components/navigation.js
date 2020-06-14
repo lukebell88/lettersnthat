@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styles from './navigation.module.css'
 import Logo from '../images/letters-n-that-logo.png'
 import Menu from './menu'
 import Popup from "reactjs-popup"
@@ -18,8 +17,8 @@ const fontStyle = {
 };
 
 export default () => (
-  <nav role="navigation" className={styles.header}>
-    <div className={styles.burger} style={fontStyle}>
+  <nav role="navigation" className="header">
+    <div className="burger" style={fontStyle}>
         <Popup
           modal
           overlayStyle={{ background: "rgba(255,255,255,0.98" }}
@@ -30,34 +29,34 @@ export default () => (
           {close => <Menu close={close} />}
         </Popup>
     </div>
-    <div className={styles.headerItem}>
-      <Link to="/" className={styles.logo}>
+    <div className="header--item">
+      <Link to="/" className="logo">
         <img
           src={Logo}
-          className={styles.logoItem}
+          className="logo--item"
           alt="Letters That"
           title="Letters N That"
         />
       </Link>
-      <div className={styles.spacer}/>
+      <div className="spacer"/>
 
 
-    <ul className={styles.navigation}>
-      <li className={styles.navigationItem}>
+    <ul className="navigation">
+      <li className="navigation--item">
         <Link to="/">Home</Link>
       </li>
-      <li className={styles.navigationItem}>
+      <li className="navigation--item">
         <Link to="/about/">About</Link>
       </li>
-      <li className={styles.navigationItem}>
+      <li className="navigation--item">
         <Link to="/contact/">Contact</Link>
       </li>
     </ul>
     </div>
 
 
-    <ul className={styles.social}>
-      <li className={styles.socialItem}>
+    <ul className="social">
+      <li className="social--item">
         <a
           href="https://www.instagram.com/letters_n_that/"
           target="_blank"
@@ -66,7 +65,7 @@ export default () => (
           title="Instagram"
         >
           <svg
-            className={styles.socialItem}
+            className="social--item"
             data-icon="instagram"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +75,7 @@ export default () => (
           </svg>
         </a>
       </li>
-      <li className={styles.socialItem}>
+      <li className="social--item">
         <a
           href="https://twitter.com/RichBell_N_That"
           target="_blank"
@@ -85,7 +84,7 @@ export default () => (
           title="Twitter"
         >
           <svg
-            className={styles.socialItem}
+            className="social--item"
             data-icon="twitter"
             role="img"
             xmlns="http://www.w3.org/2000/svg"

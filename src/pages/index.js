@@ -4,7 +4,6 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import styles from '../styles/index.module.css'
 import '../sass/main.scss'
 
 class RootIndex extends React.Component {
@@ -15,13 +14,13 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div className={styles.container}>
+        <div className="grid--container">
           <Helmet title={siteTitle} />
-          <div className={styles.containerGird}>
-            <ul className={styles.articleList}>
+          <div className="containerGird">
+            <ul className="article--list">
               {posts.map(({ node }) => {
                 return (
-                  <li className={styles.articleItem} key={node.slug}>
+                  <li className="article--item" key={node.slug}>
                     <ArticlePreview article={node} />
                   </li>
                 )

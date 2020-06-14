@@ -5,7 +5,6 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
-import styles from '../templates/blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,40 +14,33 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div className={styles.container}>
+        <div className="container">
           <Helmet title={`${post.title} | ${siteTitle}`} />
 
-          <div className={styles.heroContainer}>
-            <div className={styles.hero}>
+          <div className="hero--container">
+            <div className="hero">
               <Img
-                className={styles.heroImage}
+                className="hero--image"
                 alt={post.title}
                 fluid={post.heroImage.fluid}
               />
             </div>
           </div>
 
-          <div className={styles.detailsContainer}>
-            <h1 className={styles.title}>{post.title}</h1>
-            <p
-              style={{
-                display: 'block',
-              }}
-            >
-              {post.publishDate}
-            </p>
+          <div className="details--container">
+            <h1 className="title">{post.title}</h1>
             <div
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
 
-          <div className={styles.detailedImages}>
+          <div className="detailed--images">
             {detailed.map((image, index) => (
               <Img
                 fluid={image.fluid}
                 key={index}
-                className={styles.detailedImg}
+                className="detailed--img"
               />
             ))}
           </div>
@@ -70,14 +62,13 @@ export const pageQuery = graphql`
     }
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-      publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
+        fluid(maxWidth: 2500, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
       detailedImages {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
+        fluid(maxWidth: 2500, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
