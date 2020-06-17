@@ -112,3 +112,12 @@
     }
   
   }
+
+@media (max-width: 575.98px) {
+    .header {
+      &--item { 
+        padding: 12px 8px 4px 16px;
+      }
+    }
+}
+

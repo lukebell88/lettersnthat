@@ -1,59 +1,53 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Logo from '../images/letters-n-that-logo.png'
 import Menu from './menu'
-import Popup from "reactjs-popup"
+import Logo from './logo'
+import Popup from 'reactjs-popup'
 import BurgerIcon from './bugerIcon'
 import '../sass/main.scss'
 
+
 const contentStyle = {
-  background: "rgba(255,255,255,0)",
-  width: "80%",
-  border: "none"
-};
+  background: 'rgba(255,255,255,0)',
+  width: '80%',
+  border: 'none',
+}
 
 const fontStyle = {
-  fontFamily: "Roboto Condensed, sans-serif"
-};
+  fontFamily: 'Roboto Condensed, sans-serif',
+}
 
-export default () => (
+export default ({ data }) => (
   <nav role="navigation" className="header">
     <div className="burger" style={fontStyle}>
-        <Popup
-          modal
-          overlayStyle={{ background: "rgba(255,255,255,0.98" }}
-          contentStyle={contentStyle}
-          closeOnDocumentClick={false}
-          trigger={open => <BurgerIcon open={open} />}
-        >
-          {close => <Menu close={close} />}
-        </Popup>
+      <Popup
+        modal
+        overlayStyle={{ background: 'rgba(255,255,255,0.98' }}
+        contentStyle={contentStyle}
+        closeOnDocumentClick={false}
+        trigger={(open) => <BurgerIcon open={open} />}
+      >
+        {(close) => <Menu close={close} />}
+      </Popup>
     </div>
     <div className="header--item">
       <Link to="/" className="logo">
-        <img
-          src={Logo}
-          className="logo--item"
-          alt="Letters That"
-          title="Letters N That"
-        />
+      <Logo/>
       </Link>
-      <div className="spacer"/>
+      <div className="spacer" />
 
-
-    <ul className="navigation">
-      <li className="navigation--item">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="navigation--item">
-        <Link to="/about/">About</Link>
-      </li>
-      <li className="navigation--item">
-        <Link to="/contact/">Contact</Link>
-      </li>
-    </ul>
+      <ul className="navigation">
+        <li className="navigation--item">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="navigation--item">
+          <Link to="/about/">About</Link>
+        </li>
+        <li className="navigation--item">
+          <Link to="/contact/">Contact</Link>
+        </li>
+      </ul>
     </div>
-
 
     <ul className="social">
       <li className="social--item">

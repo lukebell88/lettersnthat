@@ -57,3 +57,11 @@
 .menu li:hover {
   color: #3A9886;
 }
+
+
+@media (max-width: 575.98px) {
+  .burger-menu,
+  .burger-menu.open {
+    top: 38px;
+  }
+}

@@ -1,3 +1,4 @@
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -31,6 +32,12 @@ module.exports = {
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images/`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
