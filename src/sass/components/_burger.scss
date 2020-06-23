@@ -4,7 +4,7 @@
   cursor: pointer;
   position: absolute;
   top: 44px;
-  left: 18px;
+  left: 32px;
   z-index: 9999;
 }
 
@@ -63,5 +63,6 @@
   .burger-menu,
   .burger-menu.open {
     top: 38px;
+    left: 16px;
   }
 }

@@ -27,13 +27,7 @@
   .burger {
     display: none;
   }
-  .spacer {
-    background-color:  $tertiary;
-    display: block;
-    width: 44px;
-    height: 6px;
-    margin-top: 16px;
-  }
+
   .navigation {
     display: flex;
     flex-direction: column;
@@ -94,9 +88,6 @@
 
     .burger {
       display: block;
-    }
-    .spacer {
-      display: none;
     }
     .navigation {
       display: none;
