@@ -35,6 +35,10 @@
   .details--container {
     width: 35%;
     margin: 32px;
+
+    & p {
+      color: $black;
+    }
   
   }
   .title {
@@ -50,26 +54,25 @@
   .detailed--img {
     margin-bottom: 16px;
   }
-  
+
   @media (max-width: 1025px) { 
     .container {
       flex-direction: column;
     }
     .hero {
-        height: auto;
-        width: 100%;
-    
-        &--container {
-            width: 100%;
-            height: auto;
-            position: relative;
-            top: auto;
-            bottom: auto;
-        }
+      width: 100%;
+  
+      &--container {
+          width: 100%;
+          height: auto;
+          position: relative;
+          top: auto;
+          bottom: auto;
+      }
     }
     .details--container {
-        width: calc(100% - 64px);
-        margin: 32px;
+      width: calc(100% - 64px);
+      margin: 32px;
     }
     title {
       font-size: 22px;
@@ -78,6 +81,9 @@
   }
 
   @media (max-width: 575.98px) {
+    .hero {
+      height: auto;
+    }
     .details--container {
       width: calc(100% - 32px);
       margin: 16px;

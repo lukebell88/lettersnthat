@@ -73,14 +73,14 @@
     display: none;
   }
   
-  @media (max-width: 1025px) {
+  @media (max-width: 768px) {
     .header {
       width: 100%;
       flex-direction: column;
       height: auto;
 
       &--item { 
-        padding: 16px;
+        padding: 12px 8px 4px 16px;
         display: flex;
         justify-content: center;
       }
@@ -104,11 +104,4 @@
   
   }
 
-@media (max-width: 575.98px) {
-    .header {
-      &--item { 
-        padding: 12px 8px 4px 16px;
-      }
-    }
-}
 
