@@ -72,12 +72,19 @@
   .mobile--spacer {
     display: none;
   }
+  @media (max-width: 1025px) {
+    .header {
+      border-right: 1px solid $gray-100;
+    }
+  }
   
   @media (max-width: 768px) {
     .header {
       width: 100%;
       flex-direction: column;
       height: auto;
+      border-right: none;
+
 
       &--item { 
         padding: 12px 8px 4px 16px;
