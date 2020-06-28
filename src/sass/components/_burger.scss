@@ -33,9 +33,13 @@
 }
 .menu {
   width: 100%;
-  display: block;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-content: space-between;
   padding: 0px;
+  margin-top: 7px;
 }
 .menu ul {
   position: relative;
@@ -56,6 +60,9 @@
 
 .menu li:hover {
   color: #3A9886;
+}
+.buger--social {
+  margin-bottom: 68px;
 }
 
 

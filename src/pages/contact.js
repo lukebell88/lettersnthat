@@ -31,25 +31,20 @@ class Contact extends React.Component {
                 __html: contact.pageBody.childMarkdownRemark.html,
               }}
             />
-            <form name="contact" method="POST" data-netlify="true">
-              <p>
-                <label>
-                  Your Name: <input type="text" name="name" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your Email: <input type="email" name="email" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Message: <textarea name="message"></textarea>
-                </label>
-              </p>
-              <p>
-                <button type="submit">Send</button>
-              </p>
+            <form className="form--container" name="contact" method="POST" data-netlify="true">
+              <label>
+                <input className="form--single" type="text" name="FirstName" placeholder="Name"/>
+              </label>
+
+              <label>
+                <input className="form--single" type="email" name="email" placeholder="Email" />
+              </label>
+
+              <label>
+                <textarea className="form--multiple" name="message" placeholder="Message..." ></textarea>
+              </label>
+
+              <button className="form--cta" type="submit">Send</button>
             </form>
           </div>
         </div>
@@ -61,13 +56,13 @@ class Contact extends React.Component {
 export default Contact
 
 export const pageQuery = graphql`
-query ContactQuery {
-    contentfulPage(title: {eq: "Contact"}) {
+  query ContactQuery {
+    contentfulPage(title: { eq: "Contact" }) {
       title
       hero {
-        fluid(maxWidth: 1180, maxHeight: 1180, resizingBehavior: SCALE) {
-            ...GatsbyContentfulFluid_tracedSVG
-          }
+        fluid(maxWidth: 2500, maxHeight: 2500, resizingBehavior: SCALE) {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
       }
       pageBody {
         childMarkdownRemark {
@@ -77,6 +72,3 @@ query ContactQuery {
     }
   }
 `
-
-
-  
